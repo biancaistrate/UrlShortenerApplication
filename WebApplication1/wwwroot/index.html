@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" nocache href="css/main.css" />
+    <title></title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/24f8a03dda.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <main>
+        <div class="background-img">
+            <svg width="510" height="227" viewBox="0 0 510 227" fill="none" xmlns="http://www.w3.org/2000/svg" class="background-img-top">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M-87.152 -39.8215C-88.9236 -97.5924 -78.1971 -154.94 -48.4234 -204.479C-20.7542 -250.517 24.1466 -281.369 72.3104 -305.144C118.507 -327.949 168.356 -332.792 219.715 -336.844C285.535 -342.038 369.083 -381.424 412.88 -332.018C457.935 -281.194 406.048 -201.31 399.82 -133.678C395.679 -88.7194 394.135 -46.317 382.55 -2.68C368.135 51.6174 373.1 123.327 324.232 151.04C275.433 178.714 218.732 122.276 162.632 122.037C93.5849 121.742 20.3777 187.044 -37.5683 149.496C-93.687 113.131 -85.1022 27.0177 -87.152 -39.8215Z" fill="url(#paint0_linear)" fill-opacity="0.4"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M-188.911 -99.6179C-180.859 -164.877 -158.829 -227.486 -116.742 -278.006C-77.6303 -324.955 -21.7855 -351.835 36.4978 -370.192C92.4006 -387.799 149.286 -384.577 207.733 -380.204C282.636 -374.6 383.414 -404.355 424.066 -341.195C465.884 -276.222 393.661 -195.431 374.9 -120.476C362.428 -70.6498 353.32 -23.2462 332.709 23.8C307.062 82.3393 300.177 163.824 240.418 186.486C180.743 209.115 126.807 135.805 63.777 125.782C-13.8004 113.447 -107.459 174.137 -166.079 121.848C-222.85 71.2077 -198.227 -24.1155 -188.911 -99.6179Z" fill="url(#paint1_linear)" fill-opacity="0.3"></path>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="403.713" y1="80.0373" x2="-60.6291" y2="-29.7743" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear" x1="342.121" y1="120.477" x2="269" y2="-1.00001" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg width="576" height="657" viewBox="0 0 576 657" fill="none" xmlns="http://www.w3.org/2000/svg" class="background-img-bottom">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M119.005 490.408C104.348 426.309 103.735 359.939 126.098 298.105C146.88 240.642 190.23 196.348 238.776 159.237C285.339 123.642 339.92 107.296 396.362 91.4996C468.695 71.2562 553.312 8.95396 613.046 54.4918C674.494 101.336 634.107 201.896 641.998 278.759C647.244 329.854 654.826 377.525 651.472 428.779C647.298 492.553 668.578 571.511 620.111 613.172C571.712 654.774 496.031 604.218 433.356 616.263C356.216 631.089 288.829 720.051 215.905 690.855C145.28 662.579 135.963 564.569 119.005 490.408Z" fill="url(#paint0_linear)" fill-opacity="0.3"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M207.243 573.011C186.674 518.997 178.054 461.296 189.988 404.743C201.078 352.187 233.418 308.347 271.157 270.126C307.354 233.466 352.877 212.586 400.086 191.958C460.587 165.523 526.658 100.977 584.206 133.341C643.406 166.634 620.5 259.094 636.735 325.044C647.526 368.884 659.935 409.46 663.26 454.486C667.397 510.511 695.542 576.654 658.427 618.825C621.363 660.938 549.321 626.149 496.228 644.271C430.882 666.576 383.059 752.23 316.019 735.699C251.094 719.689 231.041 635.504 207.243 573.011Z" fill="url(#paint1_linear)" fill-opacity="0.4"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M403.49 282.211C453.064 252.494 508.362 233.896 566.131 235.735C619.816 237.444 668.646 261.602 712.889 292.059C755.324 321.272 783.858 362.431 812.44 405.295C849.068 460.228 924.193 513.966 902.414 576.295C880.011 640.412 784.967 634.064 722.882 661.603C681.612 679.91 643.839 699.238 600.092 710.401C545.658 724.291 485.472 763.592 437.449 734.441C389.492 705.33 411.119 628.307 383.973 579.211C350.563 518.785 257.854 486.712 262.381 417.812C266.766 351.086 346.134 316.591 403.49 282.211Z" fill="url(#paint2_linear)" fill-opacity="0.6"></path>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="693.25" y1="516.469" x2="150.817" y2="495.802" gradientUnits="userSpaceOnUse"><stop stop-color="#9EE6F7" stop-opacity="0"></stop> <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop></linearGradient>
+                    <linearGradient id="paint1_linear" x1="710.313" y1="525.732" x2="235.594" y2="573.831" gradientUnits="userSpaceOnUse"><stop stop-color="#9EE6F7" stop-opacity="0"></stop> <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop></linearGradient>
+                    <linearGradient id="paint2_linear" x1="538.194" y1="769.211" x2="407.651" y2="310.266" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#9EE6F7" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-sm-4">
+                    <header>
+                        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                            <svg data-v-2895f6bc="" data-v-55d0503f="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" class="mr-2"><path data-v-2895f6bc="" d="M10.27,6.64l2.88-2.88A10,10,0,0,1,24.59,1.35a11.54,11.54,0,0,1,6.05,6.06,10,10,0,0,1-2.4,11.44l-2.88,2.89.07-6.15A5.88,5.88,0,0,0,26.71,9.1,7.48,7.48,0,0,0,22.9,5.29a5.86,5.86,0,0,0-6.48,1.28ZM3.76,13.15,6.3,10.6A3.76,3.76,0,0,0,7.38,13l1.31,1.3-1.9,1.9a5.91,5.91,0,0,0-1.5,6.71A7.48,7.48,0,0,0,9.1,26.71a5.91,5.91,0,0,0,6.71-1.5l1.91-1.91L19,24.61a3.53,3.53,0,0,0,1,.7h0a3.92,3.92,0,0,0,1.16.35l.24,0-2.55,2.55A10,10,0,0,1,7.41,30.65a11.54,11.54,0,0,1-6-6.06A10,10,0,0,1,3.76,13.15Z" class="a"></path> <path data-v-2895f6bc="" d="M17,19.21l-3.84,3.9c-2.5,2.54-6.7-1.89-4.27-4.35l3.83-3.9L9.22,11.3a1.07,1.07,0,0,1,0-1.5,1,1,0,0,1,.67-.31l11.35-.12a1,1,0,0,1,1.17,1.21l-.13,11.58a1,1,0,0,1-1.17.91,1.09,1.09,0,0,1-.6-.31Z" class="b"></path></svg>
+                            <span class="fs-4s logoInText">ShortURL</span>
+                        </a>
+                    </header>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 bg-t-teal buttom-rounded top-rounded position-relative">
+                    <nav class="nav nav-justified nav-pills">
+                        <a class="btn nav-link navigation-link rounded" onclick="toggleContent()" data-bs-toggle="collapse" href="#collapseMyUrls" role="button" aria-expanded="false" aria-controls="collapseMyUrls">My URLs</a>
+                        <a class="btn nav-link navigation-link rounded" onclick="toggleContent()" data-bs-toggle="collapse" href="#features" role="button" aria-expanded="false" aria-controls="features">Features</a>
+                        <a class="btn nav-link navigation-link rounded" onclick="toggleContent()" data-bs-toggle="collapse" href="#signup" role="button" aria-expanded="false" aria-controls="signup">Sign Up</a>
+                        <a class="btn nav-link navigation-link rounded" onclick="toggleContent()" data-bs-toggle="collapse" href="#signin" role="button" aria-expanded="false" aria-controls="signin">Sign In</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <div class="create-container">
+                        <div class="p-5 mb-4 bg-light rounded">
+                            <div class="container-fluid py-5">
+                                <label class="fs-4">
+                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" /></svg>
+                                    Enter a long URL to make a ShortURL
+                                </label>
+                                <div class="input-group has-validation">
+                                    <input type="text" class="form-control" id="long-url" onclick="validateInputOnClick()" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid url.
+                                    </div>
+                                </div>
+                                <label class="fs-4">
+                                    <svg data-v-55d0503f="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2"><g clip-path="url(#clip0)"><path d="M16.28 4.71973C15.987 4.42676 15.5124 4.42676 15.2194 4.71973L0.21949 19.7197C-0.0734889 20.0127 -0.0734889 20.4872 0.21949 20.7802L3.21949 23.7802C3.36595 23.9267 3.55787 23.9999 3.74978 23.9999C3.94169 23.9999 4.13356 23.9267 4.28007 23.7802L19.28 8.78027C19.573 8.48729 19.573 8.01271 19.28 7.71973L16.28 4.71973ZM3.74973 22.1894L1.81031 20.25L11.9997 10.0606L13.9392 12C13.9392 12 3.74973 22.1894 3.74973 22.1894ZM14.9997 10.9395L13.0603 8.99999L15.7497 6.31056L17.6891 8.25002L14.9997 10.9395Z" fill="#424242"></path> <path d="M10.5 6C11.25 4.50002 12 3.75001 13.5 3C12 2.24999 11.25 1.50002 10.5 0C9.74999 1.49998 8.99992 2.24999 7.5 3C9.00002 3.75001 9.74999 4.50002 10.5 6Z" fill="#424242"></path> <path d="M22.5 10.5C22.125 11.25 21.7499 11.625 21 12C21.75 12.375 22.125 12.75 22.5 13.5C22.875 12.7499 23.25 12.375 24 12C23.25 11.625 22.875 11.25 22.5 10.5Z" fill="#424242"></path> <path d="M22.5 2.25096C21.375 1.68844 20.8125 1.12597 20.25 0.000976562C19.6875 1.12597 19.1249 1.68849 18 2.25096C19.125 2.81349 19.6875 3.37596 20.25 4.50095C20.8125 3.37596 21.375 2.81344 22.5 2.25096Z" fill="#424242"></path></g> <defs><clipPath id="clip0"><rect width="24" height="24" fill="white"></rect></clipPath></defs></svg>
+                                    <span for="basic-url">Customize your URL</span>
+                                </label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text italic-font" id="basic-addon3">[ShortURLDomain]</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="alias" aria-describedby="basic-addon3">
+                                </div>
+                                <button class="btn btn-success btn-lg btn-xl" id="createTinyUrlBtn" onclick="createTinyUrl()" type="button">Make ShortURL!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-container">
+                        <div class="p-5 mb-4 bg-light rounded">
+                            <div class="container-fluid py-5">
+                                <label class="fs-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
+                                        <path d="M17.9999 0H13.2V2.27998H17.9999C20.0519 2.27998 21.7199 3.94796 21.7199 5.99996C21.7199 8.05196 20.0519 9.71999 17.9999 9.71999H13.2V12H17.9999C21.3119 12 23.9999 9.31195 23.9999 5.99996C23.9999 2.68796 21.3119 0 17.9999 0Z" fill="black" />
+                                        <path d="M2.27998 5.99996C2.27998 3.94796 3.94796 2.27998 5.99996 2.27998H10.8V0H6.00001C2.68802 0 0 2.68796 0 5.99996C0 9.31195 2.68802 12 6.00001 12H10.8V9.71999H6.00001C3.94802 9.71999 2.27998 8.05196 2.27998 5.99996Z" fill="black" />
+                                        <path d="M16.8 4.79999H7.19995V7.20001H16.8V4.79999Z" fill="black" />
+                                    </svg>
+                                    <span for="basic-url">Your long URL</span>
+                                </label>
+                                <input type="text" class="form-control" id="original-url" readonly>
+                                <label class="fs-4">
+                                    <svg data-v-55d0503f="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2"><g clip-path="url(#clip0)"><path d="M16.28 4.71973C15.987 4.42676 15.5124 4.42676 15.2194 4.71973L0.21949 19.7197C-0.0734889 20.0127 -0.0734889 20.4872 0.21949 20.7802L3.21949 23.7802C3.36595 23.9267 3.55787 23.9999 3.74978 23.9999C3.94169 23.9999 4.13356 23.9267 4.28007 23.7802L19.28 8.78027C19.573 8.48729 19.573 8.01271 19.28 7.71973L16.28 4.71973ZM3.74973 22.1894L1.81031 20.25L11.9997 10.0606L13.9392 12C13.9392 12 3.74973 22.1894 3.74973 22.1894ZM14.9997 10.9395L13.0603 8.99999L15.7497 6.31056L17.6891 8.25002L14.9997 10.9395Z" fill="#424242"></path> <path d="M10.5 6C11.25 4.50002 12 3.75001 13.5 3C12 2.24999 11.25 1.50002 10.5 0C9.74999 1.49998 8.99992 2.24999 7.5 3C9.00002 3.75001 9.74999 4.50002 10.5 6Z" fill="#424242"></path> <path d="M22.5 10.5C22.125 11.25 21.7499 11.625 21 12C21.75 12.375 22.125 12.75 22.5 13.5C22.875 12.7499 23.25 12.375 24 12C23.25 11.625 22.875 11.25 22.5 10.5Z" fill="#424242"></path> <path d="M22.5 2.25096C21.375 1.68844 20.8125 1.12597 20.25 0.000976562C19.6875 1.12597 19.1249 1.68849 18 2.25096C19.125 2.81349 19.6875 3.37596 20.25 4.50095C20.8125 3.37596 21.375 2.81344 22.5 2.25096Z" fill="#424242"></path></g> <defs><clipPath id="clip0"><rect width="24" height="24" fill="white"></rect></clipPath></defs></svg>
+                                    <span for="basic-url">ShortURL</span>
+                                </label>
+
+                                <input type="text" class="form-control" id="tiny-url" aria-describedby="basic-addon3" readonly>
+                                <div data-v-55d0503f="" aria-label="copy and share you link">
+                                    <div class="d-flex flex-wrap justify-content-between mr-n1 break-3 mb-2 mt-3">
+                                        <div class="d-inline-flex justify-content-between flex-fill mb-1">
+                                            <a id="visit-short-url" target="_blank" aria-label="Visit URL" class="btn btn-outline-blue flex-fill small mr-1 mb-1 has-tooltip" data-original-title="null">
+                                                <i class="fa-solid fa-share"></i>
+                                            </a>
+                                            <button type="button" class="btn btn-info opac flex-fill small mr-1 mb-1 share-network-email has-tooltip">
+                                                <i class="fa-solid fa-qrcode"></i>
+                                                QR Code
+                                            </button>
+                                            <button type="button" class="btn btn-light flex-fill small mr-1 mb-1 has-tooltip">Share</button>
+                                            <button class="btn btn-success flex-fill text-nowrap mb-1 custom-tooltip" id="copy-btn" onclick="copyToClipboad()" onmouseout="showCopyTooltip()" type="button">
+                                                <i class="fa-regular fa-copy"></i>
+                                                <span class="tooltiptext" id="copy-tooltip">Copy to clipboard</span>
+                                                Copy
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap-reverse m-n2">
+                                    <button type="button" onclick="openMyUrls()" class="btn btn-outline-blue small mb-1 mr-1">My Urls</button>
+                                    <button class="btn btn-success btn-lg flex-fill mb-1 mr-1" id="copy-btn" onclick="shortenAnother()" type="button">Shorten another</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div data-v-4ccc511d="" class="font-weight-semibold text-white" style="align-self: flex-start;">
+                        Welcome to
+                        <header class="pb-3 mb-4">
+                            <span class="fs-4s logoInText">ShortURL</span>
+                        </header>
+                        <p>Create a free account to enjoy:</p>
+                        <ul>
+                            <li>Easy Link Shortening</li>
+                            <li>Full Link History</li>
+                            <li>Customized short URLs</li>
+                        </ul>
+                        <div><a href="#!" onclick="openSignUpForm()" class="btn btn-xl btn-blue">Create Free Account</a></div>
+                    </div> <!---->
+                </div>
+                <div class="col-sm-2"></div>
+
+                <section id="collapseMyUrls" class="collapse col-sm-4 bg-light shadow-lg  buttom-rounded h-100">
+                    <div class="h-100 d-flex flex-column">
+                        <div tabindex="-1" class="flex-grow-1 overflow-y-a border-bottom">
+                            <h3 class="m-3 font-weight-semibold title text-dark">
+                                Your recent short URLs
+                            </h3>
+                            <div class="m-3 small">
+                                <!----> <!---->
+                            </div>
+                            <div class="border-top">
+
+                            </div>
+                            <div class="text-center spinner">
+                                <div class="spinner-border text-muted">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="error-message">
+                                <p class="p-2 font-weight-semibold">
+                                    Something went wrong
+                                </p>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </section>
+                <section id="features" class="collapse col-sm-4 bg-light shadow-lg  buttom-rounded h-100">
+
+                    <div class="h-100 d-flex text-center flex-column">
+                        <div tabindex="-1" class="flex-grow-1 overflow-y-a border-bottom">
+                            <h5 class="m-3 font-weight-semibold title text-dark">
+                                How it works
+                            </h5>
+                            <div class="m-3 small">
+                                <!----> <!---->
+                            </div>
+                            <div class="mt-3">
+                                <img class="rounded" src="/image/feature.png" style="width: 234px; height: 180px; margin: 0px;">
+                            </div>
+                            <div class="p-3">
+                                <h5>What is a link shortener?</h5>
+                                <p class="text-sm">
+                                    URL shortening is a technique on the World Wide Web in which a Uniform Resource Locator may be made substantially
+                                    shorter and still direct to the required page.
+                                    This is achieved by using a redirect which links to the web page that has a long URL.
+                                </p>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </section>
+                <section id="signup" class="collapse col-sm-4 bg-light shadow-lg  buttom-rounded h-100">
+                    <div class="h-100 d-flex text-center flex-column">
+                        <div tabindex="-1" class=" p-5 flex-grow-1 overflow-y-a border-bottom">
+
+                            <h5 class="text-uppercase text-center mb-5">Create an account</h5>
+
+                            <form>
+                                <div class="invalid-feedback">
+                                    Please fill in all the fields.
+                                </div>
+                                <div class="valid-signup-feedback">
+                                    <p class="text-center text-muted mt-3 mb-3 text-t-lime-dark">
+                                        Account create with success.
+                                        <a href="#!" class="text-body" onclick="openSignInForm()"><u>Login here</u></a>
+                                    </p>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="signup-name" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="signup-name">Your Name</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="signup-email" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="signup-email">Your Email</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="signup-password" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="signup-password">Password</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="signup-repeat-password" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="signup-repeat-password">Repeat your password</label>
+                                </div>
+
+                                <div class="form-check d-flex justify-content-center mb-5">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="signup-terms" required />
+                                    <label class="form-check-label" for="signup-terms">
+                                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button"
+                                            class="btn btn-success btn-lg btn-xl" onclick="pushSignUpForm(this)">
+                                        Register
+                                    </button>
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">
+                                    Have already an account? <a href="#!"
+                                                                class="fw-bold text-body" onclick="openSignInForm()"><u>Login here</u></a>
+                                </p>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </section>
+                <section id="signin" class="collapse col-sm-4 bg-light shadow-lg  buttom-rounded h-100">
+                    <div class="h-100 d-flex text-center flex-column">
+                        <div tabindex="-1" class=" p-5 flex-grow-1 overflow-y-a border-bottom">
+
+                            <h5 class="text-uppercase text-center mb-5">Have an account?</h5>
+
+                            <form>
+                                <div class="invalid-feedback">
+                                    Please fill in all the fields.
+                                </div>
+                                <div class="valid-signup-feedback">
+                                    <p class="text-center text-muted mt-3 mb-3 text-t-lime-dark">
+                                        You are now logged in.
+                                    </p>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="signin-username" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="signin-name">Your Name</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="signin-password" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="signin-password">Password</label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button"
+                                            class="btn btn-success btn-lg btn-xl" onclick="pushSignInForm(this)">
+                                        Sign In
+                                    </button>
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">
+                                    Not a member yet? <a href="#!"
+                                                         class="fw-bold text-body" onclick="openSignUpForm()"><u>Signup here</u></a>
+                                </p>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </section>
+                <!--</div>-->
+            </div>
+        </div>
+
+    </main>
+    <footer class="pt-3 mt-4 text-muted">
+        Terms
+        •
+        Privacy Policy
+    </footer>
+</body>
+</html>
