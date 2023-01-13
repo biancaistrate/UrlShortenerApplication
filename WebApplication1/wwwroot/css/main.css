@@ -510,3 +510,13 @@ a[href="#signin"].hide {
 .inline {
     display:inline-block;
 }
+
+#collapseMyUrls {
+    position:relative;
+    overflow:auto;
+}
+
+#collapseMyUrls .content {
+    overflow-y:auto;
+    position:absolute;
+}
