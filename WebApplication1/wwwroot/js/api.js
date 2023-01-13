@@ -9,7 +9,7 @@
 };
 
 function logOut() {
-    return fetch("http://localhost:5051/logOut", {
+    return fetch("http://localhost:5051/logout", {
         method: 'get', credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ function getAllTinyUrls() {
         })
 }
 function getRecentTinyUrls() {
-    return fetch("http://localhost:5051/tinyurl/getRecent/3",
+    return fetch("http://localhost:5051/tinyurl/get-recent/3",
         {
             method: "GET",
             headers: {
@@ -84,7 +84,7 @@ function getRecentTinyUrls() {
 }
 
 function getByShortForm(tinyUrl) {
-    return fetch("http://localhost:5051/tinyurl/getByShortForm?tinyUrl=" + tinyUrl,
+    return fetch("http://localhost:5051/tinyurl/get-by-short-form?tinyUrl=" + tinyUrl,
         {
             method: "GET",
             headers: {

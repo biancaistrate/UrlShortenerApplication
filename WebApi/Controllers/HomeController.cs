@@ -71,7 +71,7 @@ namespace WebApi.Controllers
             return Ok(user);
         }
 
-        [HttpGet("/logOut")]
+        [HttpGet("/logout")]
         public async Task<IActionResult> LogOut(CancellationToken cancellationToken)
         {
             await HttpContext.SignOutAsync("default");

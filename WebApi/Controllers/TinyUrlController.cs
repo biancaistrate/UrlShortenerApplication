@@ -71,7 +71,7 @@ namespace WebApi.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("getByShortForm")]
+        [HttpGet("get-by-short-form")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TinyUrl))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetByShortForm([FromQuery] string tinyUrl, CancellationToken cancellationToken)
@@ -97,7 +97,7 @@ namespace WebApi.Controllers
         }
 
         [Authorize()]
-        [HttpGet("getRecent/{top:int}")]
+        [HttpGet("get-recent/{top:int}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TinyUrl>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> GetTop(int top, CancellationToken cancellationToken)

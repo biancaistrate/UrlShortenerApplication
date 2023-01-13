@@ -286,7 +286,7 @@ function pushSignInForm(currentElement) {
 
 function fetchAllUrls() {
     document.querySelector(".spinner").classList.add("show");
-    getRecentTinyUrls()
+    getAllTinyUrls()
         .then(function (res) {
             if (!res.ok)
                 throw res.statusText;
