@@ -506,3 +506,7 @@ a[href="#signup"].hide {
 a[href="#signin"].hide {
     display: none;
 }
+
+.inline {
+    display:inline-block;
+}

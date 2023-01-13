@@ -18,7 +18,7 @@ function logOutUser() {
             document.querySelector("a[href='#signin']").classList.remove("hide");
             document.querySelector("a[href='#logged-account']").classList.add("hide");
 
-            openSignUpForm();
+            openSignInForm();
 
     })
         .catch(function () {
@@ -272,8 +272,10 @@ function pushSignInForm(currentElement) {
         .then(function () {
             currentElement.closest("#signin").querySelector(".invalid-feedback").classList.remove("show");
             toggleContent();
-            document.querySelector("#logged-account.collapse").classList.add("show");
             setupAuthenticatedAccount();
+            getCurrentUserInfo;
+            document.querySelector("#logged-account.collapse").classList.add("show");
+
         })
         .catch(function (err) {
             currentElement.closest("#signin").querySelector(".invalid-feedback").innerHTML = err;
@@ -421,13 +423,13 @@ function renderMyAccountInfo(data) {
                                                     <h6>Information</h6>
                                                     <hr class="mt-0 mb-4">
                                                     <div class="row pt-1">
-                                                        <div class="col-6 mb-3">
-                                                            <h6>Email</h6>
-                                                            <p class="text-muted">{{account.email}}</p>
-                                                        </div>
-                                                        <div class="col-6 mb-3">
-                                                            <h6>Joined</h6>
-                                                            <p class="text-muted">{{#formatDate}}{{account.createdAt}}{{/formatDate}}</p>
+                                                        <div class="col-12 mb-3">
+                                                            <div> Email:  
+                                                            <p class="inline text-muted">{{account.email}}</p>
+                                                            </div>
+                                                            <div>Joined:
+                                                            <p class="inline text-muted">{{#formatDate}}{{account.createdAt}}{{/formatDate}}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     
