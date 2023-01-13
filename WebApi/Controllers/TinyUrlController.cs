@@ -70,6 +70,16 @@ namespace WebApi.Controllers
             return url == null ? NotFound() : Ok(url);
         }
 
+        [AllowAnonymous]
+        [HttpGet("getByShortForm")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TinyUrl))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetByShortForm([FromQuery] string tinyUrl, CancellationToken cancellationToken)
+        {
+            var url = await _urlsRepository.FindByShortForm(new Uri(tinyUrl), cancellationToken);
+            return url == null ? NotFound() : Ok(url);
+        }
+
         [Authorize()]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TinyUrl>))]
@@ -102,6 +112,29 @@ namespace WebApi.Controllers
             return Ok(urls);
         }
 
+        [Authorize()]
+        [HttpPost("update")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TinyUrl))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> Update([FromBody] UpdateTinyUrlDTO tinyUrl, CancellationToken cancellationToken)
+        {
+            if (!_context.IsUserAuthenticated())
+                return Unauthorized();
 
+            if (!_context.HasClaims())
+                return Unauthorized();
+
+            var url = await _urlsRepository.GetByIdAsync(tinyUrl.Id, _context.GetUserClaim(), cancellationToken);
+            if(url == null)
+                return new NotFoundObjectResult(StatusCodes.Status404NotFound);
+
+            url.OriginalUrl=tinyUrl.NewOriginalUrl;
+            url.Alias = tinyUrl.NewAlias;
+            url.TinyUri = _tinyUrlCreator.Create(_context.GetDisplayUrl(), tinyUrl.NewAlias);
+
+            _urlsRepository.Update(url);
+            await _urlsRepository.SaveAsync(cancellationToken);
+            return Ok(url);
+        }
     }
 }

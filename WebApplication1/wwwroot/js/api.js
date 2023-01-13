@@ -8,6 +8,15 @@
     })
 };
 
+function logOut() {
+    return fetch("http://localhost:5051/logOut", {
+        method: 'get', credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+};
+
 function register(registerInfo) {
     return fetch("http://localhost:5051/register", {
         method: 'put', credentials: 'include',
@@ -18,10 +27,32 @@ function register(registerInfo) {
     })
 };
 
+function getCurrentUser() {
+    return fetch("http://localhost:5051/get-current-user", {
+        method: 'get', credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+};
+
 function createUrl(payload) {
     return fetch("http://localhost:5051/tinyurl",
         {
             method: "PUT",
+            body: JSON.stringify(payload),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+
+}
+
+function updateUrl(payload) {
+    return fetch("http://localhost:5051/tinyurl/update",
+        {
+            method: "POST",
             body: JSON.stringify(payload),
             headers: {
                 'Content-Type': 'application/json'
@@ -51,3 +82,15 @@ function getRecentTinyUrls() {
             credentials: 'include'
         })
 }
+
+function getByShortForm(tinyUrl) {
+    return fetch("http://localhost:5051/tinyurl/getByShortForm?tinyUrl=" + tinyUrl,
+        {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+}
+    

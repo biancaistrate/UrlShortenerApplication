@@ -20,7 +20,6 @@ namespace Domain.Master
         public string Alias { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(66)]
         public Uri TinyUri { get; set; }
 
         [ForeignKey("UserIdentity")]

@@ -472,3 +472,37 @@ section {
 .invalid-feedback.show {
     display: block
 }
+
+.alias.hide {
+    display:none;
+}
+.input-group.mb-3.hide {
+    display:none;
+}
+.input-group.rename-original-url.mb-3.hide {
+    display: none;
+}
+.original-url.short-url-2.hide {
+    display: none;
+}
+
+.account-img-inline {
+    border-radius: 20px;
+    margin-bottom: -8px;
+    margin-left: 10px;
+    margin-top: -10px;
+    max-height: 36px;
+    max-width: 36px px;
+}
+
+a[href="#logged-account"].hide {
+    display:none;
+}
+
+a[href="#signup"].hide {
+    display: none;
+}
+
+a[href="#signin"].hide {
+    display: none;
+}

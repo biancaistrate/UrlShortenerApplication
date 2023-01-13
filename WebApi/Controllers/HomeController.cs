@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using WebApi.Helpers;
 using WebApi.Models;
 
 namespace WebApi.Controllers
@@ -13,12 +14,15 @@ namespace WebApi.Controllers
     {
         private IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly CurrentContext _context;
 
-        public HomeController(IUserRepository userRepository, IMapper mapper)
+
+
+        public HomeController(IUserRepository userRepository, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository;
             _mapper = mapper;
-
+            _context = new CurrentContext(httpContextAccessor.HttpContext);
         }
 
         [HttpPost("/login")]
@@ -51,6 +55,28 @@ namespace WebApi.Controllers
             }
             await _userRepository.Create(_mapper.Map<UserIdentity>(user), cancellationToken);
             return Ok();
+        }
+
+        [HttpGet("/get-current-user")]
+        public async Task<IActionResult> GetCurrentAccount(CancellationToken cancellationToken)
+        {
+            if (!_context.IsUserAuthenticated())
+                return Unauthorized();
+
+            if (!_context.HasClaims())
+                return Unauthorized();
+
+            var user = await _userRepository.GetByEmail(_context.GetUserClaim(), cancellationToken);
+
+            return Ok(user);
+        }
+
+        [HttpGet("/logOut")]
+        public async Task<IActionResult> LogOut(CancellationToken cancellationToken)
+        {
+            await HttpContext.SignOutAsync("default");
+            return Ok();
+
         }
     }
 }
