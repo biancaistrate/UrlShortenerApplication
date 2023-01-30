@@ -20,9 +20,9 @@ namespace Infrastructure.Repository
             _logger = logger;
             _dbContext = dBContext;
         }
-        public void Delete(int tinyUrlId)
+        public void Delete(TinyUrl tinyUrl)
         {
-            throw new NotImplementedException();
+            _dbContext.TinyUrls.Remove(tinyUrl);
         }
 
         public async Task<IEnumerable<TinyUrl>> GetAllAsync(string userIdentifier, CancellationToken cancellationToken)

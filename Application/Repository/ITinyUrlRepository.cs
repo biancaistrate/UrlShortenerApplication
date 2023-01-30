@@ -16,7 +16,7 @@ namespace Application.Repository
 
         TinyUrl Insert(TinyUrl tinyUrl);
         void Update(TinyUrl tinyUrl);
-        void Delete(int tinyUrlId);
+        void Delete(TinyUrl tinyUrl);
         Task SaveAsync(CancellationToken cancellationToken);
     }
 }

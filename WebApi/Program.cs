@@ -1,6 +1,12 @@
 using Application.Repository;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Infrastructure;
 using Infrastructure.Repository;
+using System;
+using WebApi.Models;
+using WebApi.Validators;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +41,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddScoped<IValidator<TinyUrlDTO>, TinyUrlValidator>();
 
 var app = builder.Build();
 
@@ -54,3 +62,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+public partial class Program { }

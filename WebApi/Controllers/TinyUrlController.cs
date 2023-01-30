@@ -136,5 +136,28 @@ namespace WebApi.Controllers
             await _urlsRepository.SaveAsync(cancellationToken);
             return Ok(url);
         }
+
+        [Authorize()]
+        [HttpDelete("{alias}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> DeleteTinyUrl([FromQuery] string alias, CancellationToken cancellationToken)
+        {
+            if (!_context.IsUserAuthenticated())
+                return Unauthorized();
+
+            if (!_context.HasClaims())
+                return Unauthorized();
+            
+            var tinyUrl = await _urlsRepository.FindByShortForm(_context.GetDisplayUrl(), cancellationToken);
+
+            if (tinyUrl == null)
+            {
+                return NoContent();
+            }
+            _urlsRepository.Delete(tinyUrl);
+            await _urlsRepository.SaveAsync(cancellationToken);
+            return NoContent();
+        }
     }
 }
